@@ -106,7 +106,8 @@ def problem3(point, circle1, circle2, window):
     line4 = rg.Line(mid1, mid2)
     line5 = rg.Line(mid2, mid3)
     line6 = rg.Line(mid3, mid1)
-    line1.color = line2.color = line3.color = line4.color = line5.color= line6.color = circle2.fill_color
+    line1.color = line2.color = line3.color = circle1.fill_color
+    line4.color = line5.color = line6.color = circle2.fill_color
     line1.attach_to(window)
     line2.attach_to(window)
     line3.attach_to(window)
