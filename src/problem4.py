@@ -28,6 +28,19 @@ def main():
     #     -- Construct two Pig objects
     #     -- Call each method that you implement below.
     # -------------------------------------------------------------------------
+    pig = Pig(60)
+    other_pig = Pig(9999999)
+    print(pig.get_weight())
+    pig.eat(40)
+    print(pig.get_weight())
+    pig.eat_for_a_year()
+    print(pig.get_weight())
+    if pig.heavier_pig(other_pig) == other_pig:
+        print(True)
+    else:
+        print(False)
+    pig.new_pig(other_pig)
+    print(pig.new_pig(other_pig).get_weight())
 
 
 class Pig(object):
@@ -71,7 +84,7 @@ class Pig(object):
         whichever is heavier.
         """
         # DONe: Implement and test this method.
-        if self.weight > other_pig.weight:
+        if int(self.weight) > int(other_pig.weight):
             return self
         else:
             return other_pig
@@ -81,7 +94,8 @@ class Pig(object):
         Returns a new Pig whose weight is the weight of the heavier
           of this Pig and the other_Pig.
         """
-        weight = self.heavier_pig(other_pig)
+        if self.heavier_pig(other_pig) == other_pig:
+            weight = other_pig.get_weight()
         pig = Pig(weight)
 
         return pig

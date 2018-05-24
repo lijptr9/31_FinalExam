@@ -75,15 +75,17 @@ And this one for n=14:
     :type n: int
     """
     for k in range(n):
-        for m in range(n - k):
+        for m in range(n - k -1):
             print(" ", end="")
-        for j in range(1, k + 2):
+        for j in range(1, k + 2 ):
             if j < 10:
                 print(j, end="")
             if j >= 10:
                 print(j - 10, end="")
+        print(" ",end="")
         for l in range(2 + k):
             print("*", end="")
+        print(" ", end="")
         for o in range(n - k, 0, -1):
             if o < 10:
                 print(o, end="")
