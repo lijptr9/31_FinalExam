@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Ji Li.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -92,8 +92,31 @@ def problem3(point, circle1, circle2, window):
        :type circle2:  rg.Circle
       :type window:    rg.RoseWindow
     """
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    point.attach_to(window)
+    c1 = circle1.center
+    c2 = circle2.center
+    line1 = rg.Line(point, c1)
+    line2 = rg.Line(c1, c2)
+    line3 = rg.Line(c2, point)
+    mid1 = rg.Point((point.x + c1.x)/2, (point.y + c1.y)/2)
+    mid2 = rg.Point((c1.x+c2.x)/2, (c1.y+ c2.y)/2)
+    mid3 = rg.Point((c2.x+ point.x)/2, (c2.y+ point.y)/2)
+    line4 = rg.Line(mid1, mid2)
+    line5 = rg.Line(mid2, mid3)
+    line6 = rg.Line(mid3, mid1)
+    line1.color = line2.color = line3.color = line4.color = line5.color= line6.color = circle2.fill_color
+    line1.attach_to(window)
+    line2.attach_to(window)
+    line3.attach_to(window)
+    line4.attach_to(window)
+    line5.attach_to(window)
+    line6.attach_to(window)
+    window.render()
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 

@@ -2,12 +2,13 @@
 Final exam, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Ji Li.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
+import math
 
 
 def main():
@@ -19,9 +20,9 @@ def main():
     print()
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
-    # run_test_problem2a()
-    # run_test_problem2b()
-    # run_test_problem2c()
+    run_test_problem2a()
+    run_test_problem2b()
+    run_test_problem2c()
 
 
 def is_prime(n):
@@ -169,8 +170,14 @@ def problem2a(x, sequence):
       :type x:    int
       :type sequence:  [int]
     """
+    seq=[]
+    for k in range(len(sequence)):
+        if sequence[k]> x:
+            seq = seq + [sequence[k]]
+
+    return seq
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -250,10 +257,18 @@ def problem2b(sequence):
       :type sequence  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    number= 0
+    for k in range(len(sequence)):
+        num = sequence[k]
+        if (num**2)**0.5 > number:
+            number = num
 
+    for j in range (len(sequence)):
+        if number**2 == sequence[j]**2:
+            return j
 
 def run_test_problem2c():
     """ Tests the  problem2c   function. """
@@ -396,6 +411,8 @@ def problem2c(x):
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    for k in range(x, math,int):
+        if
 
 
 ###############################################################################
