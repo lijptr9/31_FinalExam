@@ -263,12 +263,10 @@ def problem2b(sequence):
     number= 0
     for k in range(len(sequence)):
         num = sequence[k]
-        if (num**2)**0.5 > number:
-            number = num
-
-    for j in range (len(sequence)):
-        if number**2 == sequence[j]**2:
-            return j
+        num2 = sequence[number]
+        if (num**2)**0.5 > (num2**2)**0.5:
+            number = k
+    return number
 
 def run_test_problem2c():
     """ Tests the  problem2c   function. """
@@ -408,11 +406,14 @@ def problem2c(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-    for k in range(x, math,int):
-        if
+    while True:
+        if is_prime(x) is True:
+            if is_prime(sum_of_digits(x)) is True:
+                return x
+        x = x +1
 
 
 ###############################################################################
